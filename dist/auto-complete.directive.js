@@ -30,6 +30,7 @@ var NguiAutoCompleteDirective = (function () {
             component.pathToData = _this.pathToData;
             component.minChars = _this.minChars;
             component.source = _this.source;
+            //component.autoCompleteInput = this.el;
             component.placeholder = _this.autoCompletePlaceholder;
             component.acceptUserInput = _this.acceptUserInput;
             component.maxNumList = parseInt(_this.maxNumList, 10);

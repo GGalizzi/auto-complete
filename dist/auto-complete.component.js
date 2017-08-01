@@ -129,7 +129,7 @@ var NguiAutoCompleteComponent = (function () {
             this.isLoading = true;
             if (typeof this.source === "function") {
                 // custom function that returns observable
-                this.source(keyword).subscribe(function (resp) {
+                this.source(keyword, this.autoCompleteInput).subscribe(function (resp) {
                     if (_this.pathToData) {
                         var paths = _this.pathToData.split(".");
                         paths.forEach(function (prop) { return resp = resp[prop]; });
