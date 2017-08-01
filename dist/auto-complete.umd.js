@@ -227,7 +227,7 @@ var NguiAutoCompleteComponent = (function () {
             this.isLoading = true;
             if (typeof this.source === "function") {
                 // custom function that returns observable
-                this.source(keyword, this.autoCompleteInput).subscribe(function (resp) {
+                this.source(keyword, this.directiveElRef).subscribe(function (resp) {
                     if (_this.pathToData) {
                         var paths = _this.pathToData.split(".");
                         paths.forEach(function (prop) { return resp = resp[prop]; });
@@ -510,7 +510,7 @@ var NguiAutoCompleteDirective = (function () {
             component.pathToData = _this.pathToData;
             component.minChars = _this.minChars;
             component.source = _this.source;
-            component.autoCompleteInput = _this.elRef;
+            component.directiveElRef = _this.elRef;
             component.placeholder = _this.autoCompletePlaceholder;
             component.acceptUserInput = _this.acceptUserInput;
             component.maxNumList = parseInt(_this.maxNumList, 10);

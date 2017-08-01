@@ -129,6 +129,7 @@ export class NguiAutoCompleteComponent implements OnInit {
   @ViewChild('autoCompleteInput') autoCompleteInput: ElementRef;
   @ViewChild('autoCompleteContainer') autoCompleteContainer: ElementRef;
 
+  directiveElRef: ElementRef;
   el: HTMLElement;           // this component  element `<ngui-auto-complete>`
 
   dropdownVisible: boolean = false;
@@ -215,7 +216,7 @@ export class NguiAutoCompleteComponent implements OnInit {
 
       if (typeof this.source === "function") {
         // custom function that returns observable
-        this.source(keyword, this.autoCompleteInput).subscribe(
+        this.source(keyword, this.directiveElRef).subscribe(
           resp => {
 
             if (this.pathToData) {

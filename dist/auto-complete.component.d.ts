@@ -29,6 +29,7 @@ export declare class NguiAutoCompleteComponent implements OnInit {
     valueSelected: EventEmitter<{}>;
     autoCompleteInput: ElementRef;
     autoCompleteContainer: ElementRef;
+    directiveElRef: ElementRef;
     el: HTMLElement;
     dropdownVisible: boolean;
     isLoading: boolean;

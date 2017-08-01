@@ -159,7 +159,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
     component.pathToData = this.pathToData;
     component.minChars = this.minChars;
     component.source = this.source;
-    component.autoCompleteInput = this.elRef;
+    component.directiveElRef = this.elRef;
     component.placeholder = this.autoCompletePlaceholder;
     component.acceptUserInput = this.acceptUserInput;
     component.maxNumList = parseInt(this.maxNumList, 10);
