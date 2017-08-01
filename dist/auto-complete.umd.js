@@ -510,7 +510,7 @@ var NguiAutoCompleteDirective = (function () {
             component.pathToData = _this.pathToData;
             component.minChars = _this.minChars;
             component.source = _this.source;
-            //component.autoCompleteInput = this.el;
+            component.autoCompleteInput = _this.elRef;
             component.placeholder = _this.autoCompletePlaceholder;
             component.acceptUserInput = _this.acceptUserInput;
             component.maxNumList = parseInt(_this.maxNumList, 10);
@@ -610,6 +610,7 @@ var NguiAutoCompleteDirective = (function () {
             }
         };
         this.el = this.viewContainerRef.element.nativeElement;
+        this.elRef = this.viewContainerRef.element;
     }
     NguiAutoCompleteDirective.prototype.ngOnInit = function () {
         var _this = this;

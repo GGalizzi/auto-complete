@@ -2,6 +2,7 @@ import {
   Directive,
   Input,
   Output,
+  ElementRef,
   ComponentRef,
   ViewContainerRef,
   EventEmitter,
@@ -56,6 +57,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
   componentRef: ComponentRef<NguiAutoCompleteComponent>;
   wrapperEl: HTMLElement;
   el: HTMLElement;   // this element element, can be any
+  elRef: ElementRef;
   acDropdownEl: HTMLElement; // auto complete element
   inputEl: HTMLInputElement;  // input element of this element
   formControl: AbstractControl;
@@ -69,6 +71,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
               public  viewContainerRef: ViewContainerRef,
               @Optional() @Host() @SkipSelf() private parentForm: ControlContainer) {
     this.el = this.viewContainerRef.element.nativeElement;
+    this.elRef = this.viewContainerRef.element;
   }
 
   ngOnInit(): void {
@@ -156,7 +159,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
     component.pathToData = this.pathToData;
     component.minChars = this.minChars;
     component.source = this.source;
-    //component.autoCompleteInput = this.el;
+    component.autoCompleteInput = this.elRef;
     component.placeholder = this.autoCompletePlaceholder;
     component.acceptUserInput = this.acceptUserInput;
     component.maxNumList = parseInt(this.maxNumList, 10);

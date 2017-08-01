@@ -1,4 +1,4 @@
-import { ComponentRef, ViewContainerRef, EventEmitter, OnInit, ComponentFactoryResolver, Renderer, SimpleChanges, OnChanges } from "@angular/core";
+import { ElementRef, ComponentRef, ViewContainerRef, EventEmitter, OnInit, ComponentFactoryResolver, Renderer, SimpleChanges, OnChanges } from "@angular/core";
 import { NguiAutoCompleteComponent } from "./auto-complete.component";
 import { ControlContainer, AbstractControl, FormControl } from "@angular/forms";
 /**
@@ -34,6 +34,7 @@ export declare class NguiAutoCompleteDirective implements OnInit, OnChanges {
     componentRef: ComponentRef<NguiAutoCompleteComponent>;
     wrapperEl: HTMLElement;
     el: HTMLElement;
+    elRef: ElementRef;
     acDropdownEl: HTMLElement;
     inputEl: HTMLInputElement;
     formControl: AbstractControl;
