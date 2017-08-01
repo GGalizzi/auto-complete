@@ -215,7 +215,7 @@ export class NguiAutoCompleteComponent implements OnInit {
 
       if (typeof this.source === "function") {
         // custom function that returns observable
-        this.source(keyword).subscribe(
+        this.source(keyword, this.autoCompleteInput).subscribe(
           resp => {
 
             if (this.pathToData) {
