@@ -117,8 +117,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
   ngAfterViewInit() {
     // if this element is not an input tag, move dropdown after input tag
     // so that it displays correctly
-    this.inputEl = this.el.tagName === "INPUT" ?
-        <HTMLInputElement>this.el : <HTMLInputElement>this.el.querySelector("input");
+    this.inputEl = <HTMLInputElement>this.el;
 
     this.inputEl.addEventListener('focus', e => this.showAutoCompleteDropdown(e));
     this.inputEl.addEventListener('blur', e => {
