@@ -175,8 +175,7 @@ var NguiAutoCompleteDirective = (function () {
         var _this = this;
         // if this element is not an input tag, move dropdown after input tag
         // so that it displays correctly
-        this.inputEl = this.el.tagName === "INPUT" ?
-            this.el : this.el.querySelector("input");
+        this.inputEl = this.el;
         this.inputEl.addEventListener('focus', function (e) { return _this.showAutoCompleteDropdown(e); });
         this.inputEl.addEventListener('blur', function (e) {
             _this.scheduledBlurHandler = _this.hideAutoCompleteDropdown;
