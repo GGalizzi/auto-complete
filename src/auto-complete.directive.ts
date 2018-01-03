@@ -182,7 +182,7 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
       this.inputEl.parentElement.insertBefore(this.acDropdownEl, this.inputEl.nextSibling);
     }
 
-    if (this.el.tagName === "ION-INPUT") {
+    if (this.el.tagName === "ION-INPUT" && this.inputEl.value == undefined) {
       this.inputEl = this.inputEl.firstElementChild as HTMLInputElement;
     }
 
