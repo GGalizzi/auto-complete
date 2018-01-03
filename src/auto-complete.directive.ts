@@ -182,6 +182,10 @@ export class NguiAutoCompleteDirective implements OnInit, OnChanges {
       this.inputEl.parentElement.insertBefore(this.acDropdownEl, this.inputEl.nextSibling);
     }
 
+    if (this.el.tagName === "ION-INPUT") {
+      this.inputEl = this.inputEl.firstElementChild as HTMLInputElement;
+    }
+
     this.revertValue = typeof this.ngModel !== "undefined" ? this.ngModel : this.inputEl.value;
 
     setTimeout(() => {

@@ -529,6 +529,9 @@ var NguiAutoCompleteDirective = (function () {
             if (_this.el.tagName !== "INPUT" && _this.acDropdownEl) {
                 _this.inputEl.parentElement.insertBefore(_this.acDropdownEl, _this.inputEl.nextSibling);
             }
+            if (_this.el.tagName === "ION-INPUT") {
+                _this.inputEl = _this.inputEl.firstElementChild;
+            }
             _this.revertValue = typeof _this.ngModel !== "undefined" ? _this.ngModel : _this.inputEl.value;
             setTimeout(function () {
                 component.reloadList(_this.inputEl.value);
